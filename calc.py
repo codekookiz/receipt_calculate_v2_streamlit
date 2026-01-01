@@ -30,16 +30,24 @@ def render_calc_page():
 
     with col2:
         today = datetime.today()
+
+        if today.month == 1:
+            year = today.year
+            month = 12
+        else:
+            year = today.year - 1
+            month = today.month - 1
+
         year = st.selectbox(
             "📅 연도",
             options=list(range(today.year - 1, today.year + 2)),
-            index=1,
+            index=today.year - year,
             key="history_year_select"
         )
         month = st.selectbox(
             "📅 월",
             options=list(range(1, 13)),
-            index=today.month - 1,
+            index=month - 1,
             key="history_month_select"
         )
 
