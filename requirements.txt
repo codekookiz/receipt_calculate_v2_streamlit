@@ -2,5 +2,4 @@ streamlit
 huggingface_hub
 boto3
 Pillow
-requests
 python-dotenv
